@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	common "github.com/bilibili/kratos/tool/pkg"
+	common "github.com/zzpu/kratos/tool/pkg"
 
 	"github.com/urfave/cli/v2"
 )

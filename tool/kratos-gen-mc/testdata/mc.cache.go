@@ -46,8 +46,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/bilibili/kratos/pkg/cache/memcache"
-	"github.com/bilibili/kratos/pkg/log"
+	"github.com/zzpu/kratos/pkg/cache/memcache"
+	"github.com/zzpu/kratos/pkg/log"
 )
 
 var (

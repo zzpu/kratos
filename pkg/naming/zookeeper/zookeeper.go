@@ -12,10 +12,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/naming"
-	xtime "github.com/bilibili/kratos/pkg/time"
 	"github.com/go-zookeeper/zk"
+	"github.com/zzpu/kratos/pkg/log"
+	"github.com/zzpu/kratos/pkg/naming"
+	xtime "github.com/zzpu/kratos/pkg/time"
 )
 
 // Config is zookeeper config.

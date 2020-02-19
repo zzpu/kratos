@@ -7,10 +7,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/bilibili/kratos/pkg/conf/env"
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/naming"
-	wmeta "github.com/bilibili/kratos/pkg/net/rpc/warden/internal/metadata"
+	"github.com/zzpu/kratos/pkg/conf/env"
+	"github.com/zzpu/kratos/pkg/log"
+	"github.com/zzpu/kratos/pkg/naming"
+	wmeta "github.com/zzpu/kratos/pkg/net/rpc/warden/internal/metadata"
 
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/resolver"

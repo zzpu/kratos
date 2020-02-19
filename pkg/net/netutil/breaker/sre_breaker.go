@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/ecode"
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/stat/metric"
+	"github.com/zzpu/kratos/pkg/ecode"
+	"github.com/zzpu/kratos/pkg/log"
+	"github.com/zzpu/kratos/pkg/stat/metric"
 )
 
 // sreBreaker is a sre CircuitBreaker pattern.

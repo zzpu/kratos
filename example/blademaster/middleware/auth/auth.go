@@ -1,9 +1,9 @@
 package auth
 
 import (
-	"github.com/bilibili/kratos/pkg/ecode"
-	bm "github.com/bilibili/kratos/pkg/net/http/blademaster"
-	"github.com/bilibili/kratos/pkg/net/metadata"
+	"github.com/zzpu/kratos/pkg/ecode"
+	bm "github.com/zzpu/kratos/pkg/net/http/blademaster"
+	"github.com/zzpu/kratos/pkg/net/metadata"
 )
 
 // Config is the identify config model.

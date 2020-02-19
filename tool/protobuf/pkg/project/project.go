@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/bilibili/kratos/tool/protobuf/pkg/utils"
 	"github.com/pkg/errors"
 	"github.com/siddontang/go/ioutil2"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/utils"
 )
 
 // if proto file is inside a project (that has a /api directory)

@@ -4,11 +4,11 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/bilibili/kratos/tool/protobuf/pkg/extensions/gogoproto"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/tag"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/typemap"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/extensions/gogoproto"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/tag"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/typemap"
 )
 
 // GetJSONFieldName get name from gogoproto.jsontag

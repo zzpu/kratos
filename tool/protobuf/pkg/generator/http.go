@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/bilibili/kratos/tool/protobuf/pkg/tag"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/typemap"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/tag"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/typemap"
 	"google.golang.org/genproto/googleapis/api/annotations"
 )
 

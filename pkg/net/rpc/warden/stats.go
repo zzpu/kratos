@@ -4,8 +4,8 @@ import (
 	"context"
 	"strconv"
 
-	nmd "github.com/bilibili/kratos/pkg/net/rpc/warden/internal/metadata"
-	"github.com/bilibili/kratos/pkg/stat/sys/cpu"
+	nmd "github.com/zzpu/kratos/pkg/net/rpc/warden/internal/metadata"
+	"github.com/zzpu/kratos/pkg/stat/sys/cpu"
 
 	"google.golang.org/grpc"
 	gmd "google.golang.org/grpc/metadata"

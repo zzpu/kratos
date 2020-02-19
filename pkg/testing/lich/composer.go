@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/log"
+	"github.com/zzpu/kratos/pkg/log"
 )
 
 var (

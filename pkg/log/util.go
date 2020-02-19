@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/conf/env"
-	"github.com/bilibili/kratos/pkg/log/internal/core"
-	"github.com/bilibili/kratos/pkg/net/metadata"
-	"github.com/bilibili/kratos/pkg/net/trace"
+	"github.com/zzpu/kratos/pkg/conf/env"
+	"github.com/zzpu/kratos/pkg/log/internal/core"
+	"github.com/zzpu/kratos/pkg/net/metadata"
+	"github.com/zzpu/kratos/pkg/net/trace"
 )
 
 func addExtraField(ctx context.Context, fields map[string]interface{}) {

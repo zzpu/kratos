@@ -19,9 +19,9 @@ import (
 	{{if .UseStrConv}}"strconv"{{end}}
 	{{if .EnableBatch }}"sync"{{end}}
 NEWLINE
-	{{if .UseMemcached }}"github.com/bilibili/kratos/pkg/cache/memcache"{{end}}
-	{{if .EnableBatch }}"github.com/bilibili/kratos/pkg/sync/errgroup"{{end}}
-	"github.com/bilibili/kratos/pkg/log"
+	{{if .UseMemcached }}"github.com/zzpu/kratos/pkg/cache/memcache"{{end}}
+	{{if .EnableBatch }}"github.com/zzpu/kratos/pkg/sync/errgroup"{{end}}
+	"github.com/zzpu/kratos/pkg/log"
 	{{.ImportPackage}}
 )
 

@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	test "github.com/bilibili/kratos/pkg/cache/memcache/test"
 	"github.com/gogo/protobuf/proto"
+	test "github.com/zzpu/kratos/pkg/cache/memcache/test"
 )
 
 func TestConnRaw(t *testing.T) {

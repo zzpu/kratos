@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/bilibili/kratos/pkg/cache/memcache"
-	"github.com/bilibili/kratos/pkg/container/pool"
-	xtime "github.com/bilibili/kratos/pkg/time"
+	"github.com/zzpu/kratos/pkg/cache/memcache"
+	"github.com/zzpu/kratos/pkg/container/pool"
+	xtime "github.com/zzpu/kratos/pkg/time"
 )
 
 // Dao .
 type Dao struct {
-	mc            *memcache.Memcache
+	mc         *memcache.Memcache
 	demoExpire int32
 }
 
@@ -33,7 +33,7 @@ func New() (d *Dao) {
 		WriteTimeout: xtime.Duration(time.Second),
 	}
 	d = &Dao{
-		mc:            memcache.New(cfg),
+		mc:         memcache.New(cfg),
 		demoExpire: int32(5),
 	}
 	return

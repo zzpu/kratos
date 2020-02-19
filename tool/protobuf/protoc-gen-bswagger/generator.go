@@ -6,13 +6,13 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/bilibili/kratos/tool/protobuf/pkg/gen"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/generator"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/naming"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/tag"
-	"github.com/bilibili/kratos/tool/protobuf/pkg/typemap"
 	"github.com/golang/protobuf/protoc-gen-go/descriptor"
 	plugin "github.com/golang/protobuf/protoc-gen-go/plugin"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/gen"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/generator"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/naming"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/tag"
+	"github.com/zzpu/kratos/tool/protobuf/pkg/typemap"
 )
 
 type swaggerGen struct {

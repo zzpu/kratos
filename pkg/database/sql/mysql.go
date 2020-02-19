@@ -1,9 +1,9 @@
 package sql
 
 import (
-	"github.com/bilibili/kratos/pkg/log"
-	"github.com/bilibili/kratos/pkg/net/netutil/breaker"
-	"github.com/bilibili/kratos/pkg/time"
+	"github.com/zzpu/kratos/pkg/log"
+	"github.com/zzpu/kratos/pkg/net/netutil/breaker"
+	"github.com/zzpu/kratos/pkg/time"
 
 	// database driver
 	_ "github.com/go-sql-driver/mysql"
