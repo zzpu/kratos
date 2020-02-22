@@ -65,6 +65,13 @@ func (c *Context) Next() {
 		c.index++
 	}
 }
+func (c *Context) Header(key, value string) {
+	if value == "" {
+		c.Writer.Header().Del(key)
+		return
+	}
+	c.Writer.Header().Set(key, value)
+}
 
 // Abort prevents pending handlers from being called. Note that this will not stop the current handler.
 // Let's say you have an authorization middleware that validates that the current request is authorized.
