@@ -36,6 +36,7 @@ func buildDir(base string, cmd string, n int) string {
 		panic(err)
 	}
 	for _, d := range dirs {
+
 		if d.IsDir() && d.Name() == cmd {
 			return path.Join(base, cmd)
 		}
