@@ -56,7 +56,7 @@ e.GET("/path", myHandler)
 
 # 全局中间件
 
-在blademaster的`server.go`代码中，有以下代码：
+在gin的`server.go`代码中，有以下代码：
 
 ```go
 func DefaultServer(conf *ServerConfig) *Engine {
@@ -76,7 +76,7 @@ engine.Use(YourMiddleware())
 
 # 局部中间件
 
-先来看一段鉴权伪代码示例([auth示例代码位置](https://github.com/zzpu/kratos/tree/master/example/blademaster/middleware/auth))：
+先来看一段鉴权伪代码示例([auth示例代码位置](https://github.com/zzpu/kratos/tree/master/example/gin/middleware/auth))：
 
 ```go
 func Example() {
@@ -107,19 +107,19 @@ func Example() {
 
 ## Recovery
 
-代码位于`pkg/net/http/blademaster/recovery.go`内，用于recovery panic。会被`DefaultServer`默认注册，建议使用`NewServer`的话也将其作为首个中间件注册。
+代码位于`pkg/net/http/gin/recovery.go`内，用于recovery panic。会被`DefaultServer`默认注册，建议使用`NewServer`的话也将其作为首个中间件注册。
 
 ## Trace
 
-代码位于`pkg/net/http/blademaster/trace.go`内，用于trace设置，并且实现了`net/http/httptrace`的接口，能够收集官方库内的调用栈详情。会被`DefaultServer`默认注册，建议使用`NewServer`的话也将其作为第二个中间件注册。
+代码位于`pkg/net/http/gin/trace.go`内，用于trace设置，并且实现了`net/http/httptrace`的接口，能够收集官方库内的调用栈详情。会被`DefaultServer`默认注册，建议使用`NewServer`的话也将其作为第二个中间件注册。
 
 ## Logger
 
-代码位于`pkg/net/http/blademaster/logger.go`内，用于请求日志记录。会被`DefaultServer`默认注册，建议使用`NewServer`的话也将其作为第三个中间件注册。
+代码位于`pkg/net/http/gin/logger.go`内，用于请求日志记录。会被`DefaultServer`默认注册，建议使用`NewServer`的话也将其作为第三个中间件注册。
 
 ## CSRF
 
-代码位于`pkg/net/http/blademaster/csrf.go`内，用于防跨站请求。如要使用如下：
+代码位于`pkg/net/http/gin/csrf.go`内，用于防跨站请求。如要使用如下：
 
 ```go
 e := bm.DefaultServer(nil)
@@ -132,7 +132,7 @@ e.GET("/api", csrf, myHandler)
 
 ## CORS
 
-代码位于`pkg/net/http/blademaster/cors.go`内，用于跨域允许请求。请注意该：
+代码位于`pkg/net/http/gin/cors.go`内，用于跨域允许请求。请注意该：
 1. 使用该中间件进行全局注册后，可"省略"单独为`OPTIONS`请求注册路由，如示例一。
 2. 使用该中间单独为某路由注册，需要为该路由再注册一个`OPTIONS`方法的同路径路由，如示例二。
 
@@ -171,9 +171,9 @@ e.GET("/api", csrf, myHandler)
 
 # 扩展阅读
 
-[bm快速开始](blademaster-quickstart.md)   
-[bm模块说明](blademaster-mod.md)  
-[bm基于pb生成](blademaster-pb.md)  
+[bm快速开始](gin-quickstart.md)   
+[bm模块说明](gin-mod.md)  
+[bm基于pb生成](gin-pb.md)  
 
 -------------
 

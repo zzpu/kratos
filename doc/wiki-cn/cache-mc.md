@@ -116,7 +116,7 @@ func (d *dao) pingMC(ctx context.Context) (err error) {
 }
 ```
 
-生成的dao层模板中自带了memcache相关的ping方法，用于为负载均衡服务的健康监测提供依据，详见[blademaster](blademaster-quickstart.md)。
+生成的dao层模板中自带了memcache相关的ping方法，用于为负载均衡服务的健康监测提供依据，详见[gin](gin-quickstart.md)。
 
 ## 关闭
 

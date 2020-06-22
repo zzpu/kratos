@@ -7,7 +7,7 @@
 - RPC client: pkg/net/rpc/warden/client
 - Mysql client：pkg/database/sql
 - Tidb client：pkg/database/tidb
-- Http client：pkg/net/http/blademaster
+- Http client：pkg/net/http/gin
 
 ## 使用说明
 ```go

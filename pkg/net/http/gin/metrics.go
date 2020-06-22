@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import "github.com/zzpu/kratos/pkg/stat/metric"
 

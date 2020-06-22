@@ -6,8 +6,8 @@ package api
 import (
 	"context"
 
-	bm "github.com/zzpu/kratos/pkg/net/http/blademaster"
-	"github.com/zzpu/kratos/pkg/net/http/blademaster/binding"
+	bm "github.com/zzpu/kratos/pkg/net/http/gin"
+	"github.com/zzpu/kratos/pkg/net/http/gin/binding"
 )
 import google_protobuf1 "github.com/golang/protobuf/ptypes/empty"
 
@@ -46,7 +46,7 @@ func userCard(c *bm.Context) {
 	c.JSON(resp, err)
 }
 
-// RegisterUserBMServer Register the blademaster route
+// RegisterUserBMServer Register the gin route
 func RegisterUserBMServer(e *bm.Engine, server UserBMServer) {
 	UserSvc = server
 	e.GET("/user.api.User/Info", userInfo)

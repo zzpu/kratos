@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	"flag"
@@ -46,10 +46,10 @@ func startPerf(engine *Engine) {
 		go func() {
 			d, err := dsn.Parse(_perfDSN)
 			if err != nil {
-				panic(errors.Errorf("blademaster: http perf dsn must be tcp://$host:port, %s:error(%v)", _perfDSN, err))
+				panic(errors.Errorf("gin: http perf dsn must be tcp://$host:port, %s:error(%v)", _perfDSN, err))
 			}
 			if err := http.ListenAndServe(d.Host, nil); err != nil {
-				panic(errors.Errorf("blademaster: listen %s: error(%v)", d.Host, err))
+				panic(errors.Errorf("gin: listen %s: error(%v)", d.Host, err))
 			}
 		}()
 	})

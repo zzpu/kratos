@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	criticalityPkg "github.com/zzpu/kratos/pkg/net/criticality"

@@ -17,7 +17,7 @@ import (
 	"github.com/zzpu/kratos/pkg/ecode"
 	"github.com/zzpu/kratos/pkg/log"
 	"github.com/zzpu/kratos/pkg/naming"
-	http "github.com/zzpu/kratos/pkg/net/http/blademaster"
+	http "github.com/zzpu/kratos/pkg/net/http/gin"
 	xtime "github.com/zzpu/kratos/pkg/time"
 )
 

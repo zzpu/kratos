@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	"context"
@@ -51,10 +51,10 @@ func parseDSN(rawdsn string) *ServerConfig {
 	conf := new(ServerConfig)
 	d, err := dsn.Parse(rawdsn)
 	if err != nil {
-		panic(errors.Wrapf(err, "blademaster: invalid dsn: %s", rawdsn))
+		panic(errors.Wrapf(err, "gin: invalid dsn: %s", rawdsn))
 	}
 	if _, err = d.Bind(conf); err != nil {
-		panic(errors.Wrapf(err, "blademaster: invalid dsn: %s", rawdsn))
+		panic(errors.Wrapf(err, "gin: invalid dsn: %s", rawdsn))
 	}
 	return conf
 }
@@ -91,11 +91,11 @@ func (engine *Engine) Start() error {
 	conf := engine.conf
 	l, err := net.Listen(conf.Network, conf.Addr)
 	if err != nil {
-		errors.Wrapf(err, "blademaster: listen tcp: %s", conf.Addr)
+		errors.Wrapf(err, "gin: listen tcp: %s", conf.Addr)
 		return err
 	}
 
-	log.Info("blademaster: start http listen addr: %s", conf.Addr)
+	log.Info("gin: start http listen addr: %s", conf.Addr)
 	server := &http.Server{
 		ReadTimeout:  time.Duration(conf.ReadTimeout),
 		WriteTimeout: time.Duration(conf.WriteTimeout),
@@ -103,10 +103,10 @@ func (engine *Engine) Start() error {
 	go func() {
 		if err := engine.RunServer(server, l); err != nil {
 			if errors.Cause(err) == http.ErrServerClosed {
-				log.Info("blademaster: server closed")
+				log.Info("gin: server closed")
 				return
 			}
-			panic(errors.Wrapf(err, "blademaster: engine.ListenServer(%+v, %+v)", server, l))
+			panic(errors.Wrapf(err, "gin: engine.ListenServer(%+v, %+v)", server, l))
 		}
 	}()
 
@@ -163,7 +163,7 @@ type injection struct {
 func NewServer(conf *ServerConfig) *Engine {
 	if conf == nil {
 		if !flag.Parsed() {
-			fmt.Fprint(os.Stderr, "[blademaster] please call flag.Parse() before Init blademaster server, some configure may not effect.\n")
+			fmt.Fprint(os.Stderr, "[gin] please call flag.Parse() before Init gin server, some configure may not effect.\n")
 		}
 		conf = parseDSN(_httpDSN)
 	}
@@ -215,13 +215,13 @@ func DefaultServer(conf *ServerConfig) *Engine {
 
 func (engine *Engine) addRoute(method, path string, handlers ...HandlerFunc) {
 	if path[0] != '/' {
-		panic("blademaster: path must begin with '/'")
+		panic("gin: path must begin with '/'")
 	}
 	if method == "" {
-		panic("blademaster: HTTP method can not be empty")
+		panic("gin: HTTP method can not be empty")
 	}
 	if len(handlers) == 0 {
-		panic("blademaster: there must be at least one handler")
+		panic("gin: there must be at least one handler")
 	}
 	if _, ok := engine.metastore[path]; !ok {
 		engine.metastore[path] = make(map[string]interface{})
@@ -327,7 +327,7 @@ func (engine *Engine) handleContext(c *Context) {
 // Only the valid config will be loaded.
 func (engine *Engine) SetConfig(conf *ServerConfig) (err error) {
 	if conf.Timeout <= 0 {
-		return errors.New("blademaster: config timeout must greater than 0")
+		return errors.New("gin: config timeout must greater than 0")
 	}
 	if conf.Network == "" {
 		conf.Network = "tcp"
@@ -363,7 +363,7 @@ func (engine *Engine) Server() *http.Server {
 func (engine *Engine) Shutdown(ctx context.Context) error {
 	server := engine.Server()
 	if server == nil {
-		return errors.New("blademaster: no server")
+		return errors.New("gin: no server")
 	}
 	return errors.WithStack(server.Shutdown(ctx))
 }

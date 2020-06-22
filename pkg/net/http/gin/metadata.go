@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	"fmt"
@@ -34,11 +34,11 @@ var _parser = map[string]func(string) interface{}{
 		}
 		val, err := strconv.ParseBool(mirrorStr)
 		if err != nil {
-			log.Warn("blademaster: failed to parse mirror: %+v", errors.Wrap(err, mirrorStr))
+			log.Warn("gin: failed to parse mirror: %+v", errors.Wrap(err, mirrorStr))
 			return false
 		}
 		if !val {
-			log.Warn("blademaster: request mirrorStr value :%s is false", mirrorStr)
+			log.Warn("gin: request mirrorStr value :%s is false", mirrorStr)
 		}
 		return val
 	},

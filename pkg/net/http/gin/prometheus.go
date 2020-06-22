@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"

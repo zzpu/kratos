@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	"bytes"
@@ -31,7 +31,7 @@ const (
 )
 
 var (
-	_noKickUserAgent = "blademaster"
+	_noKickUserAgent = "gin"
 )
 
 func init() {

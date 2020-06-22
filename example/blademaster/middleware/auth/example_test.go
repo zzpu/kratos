@@ -3,8 +3,8 @@ package auth_test
 import (
 	"fmt"
 
-	"github.com/zzpu/kratos/example/blademaster/middleware/auth"
-	bm "github.com/zzpu/kratos/pkg/net/http/blademaster"
+	"github.com/zzpu/kratos/example/gin/middleware/auth"
+	bm "github.com/zzpu/kratos/pkg/net/http/gin"
 	"github.com/zzpu/kratos/pkg/net/metadata"
 )
 

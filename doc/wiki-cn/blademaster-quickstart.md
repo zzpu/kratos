@@ -50,7 +50,7 @@
 
 # 路由
 
-创建项目成功后，进入`internal/server/http`目录下，打开`http.go`文件，其中有默认生成的`blademaster`模板。其中：
+创建项目成功后，进入`internal/server/http`目录下，打开`http.go`文件，其中有默认生成的`gin`模板。其中：
 
 ```go
 engine = bm.DefaultServer(hc.Server)
@@ -186,9 +186,9 @@ go tool pprof http://127.0.0.1:8000/debug/pprof/profile
 
 # 扩展阅读
 
-[bm模块说明](blademaster-mod.md)  
-[bm中间件](blademaster-mid.md)  
-[bm基于pb生成](blademaster-pb.md)  
+[bm模块说明](gin-mod.md)  
+[bm中间件](gin-mid.md)  
+[bm基于pb生成](gin-pb.md)  
 
 -------------
 

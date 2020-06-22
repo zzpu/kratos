@@ -347,7 +347,7 @@ func httpMock(method, url string) *gock.Request {
     return r
 }
 ```
-2. blademaster库HTTP请求Mock
+2. gin库HTTP请求Mock
 ```Go
 // 原方法
 func (d *Dao) SendWechatToGroup(c context.Context, chatid, msg string) (err error) {

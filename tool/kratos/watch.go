@@ -128,7 +128,7 @@ func AutoBuild(c *cli.Context, files []string, isgenerate bool) {
 	// are able to use "go install" to reduce build time.
 	if goInstall {
 		dir := buildDir(base, "cmd", 5)
-		icmd := exec.Command(cmdName, "install", "v")
+		icmd := exec.Command(cmdName, "install", "-v")
 		icmd.Dir = dir
 		icmd.Stdout = os.Stdout
 		icmd.Stderr = os.Stderr

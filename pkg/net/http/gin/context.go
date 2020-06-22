@@ -1,4 +1,4 @@
-package blademaster
+package gin
 
 import (
 	"context"
@@ -8,8 +8,8 @@ import (
 	"text/template"
 
 	"github.com/zzpu/kratos/pkg/ecode"
-	"github.com/zzpu/kratos/pkg/net/http/blademaster/binding"
-	"github.com/zzpu/kratos/pkg/net/http/blademaster/render"
+	"github.com/zzpu/kratos/pkg/net/http/gin/binding"
+	"github.com/zzpu/kratos/pkg/net/http/gin/render"
 
 	"github.com/gogo/protobuf/proto"
 	"github.com/gogo/protobuf/types"

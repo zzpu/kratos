@@ -1,6 +1,6 @@
 # Context
 
-以下是 blademaster 中 Context 对象结构体声明的代码片段：
+以下是 gin 中 Context 对象结构体声明的代码片段：
 ```go
 // Context is the most important part. It allows us to pass variables between
 // middleware, manage the flow, validate the JSON of a request and render a
@@ -25,14 +25,14 @@ type Context struct {
 }
 ```
 
-* 首先可以看到 blademaster 的 Context 结构体中会 embed 一个标准库中的 Context 实例，bm 中的 Context 也是直接通过该实例来实现标准库中的 Context 接口。
-* blademaster 会使用配置的 server timeout (默认1s) 作为一次请求整个过程中的超时时间，使用该context调用dao做数据库、缓存操作查询时均会将该超时时间传递下去，一旦抵达deadline，后续相关操作均会返回`context deadline exceeded`。
+* 首先可以看到 gin 的 Context 结构体中会 embed 一个标准库中的 Context 实例，bm 中的 Context 也是直接通过该实例来实现标准库中的 Context 接口。
+* gin 会使用配置的 server timeout (默认1s) 作为一次请求整个过程中的超时时间，使用该context调用dao做数据库、缓存操作查询时均会将该超时时间传递下去，一旦抵达deadline，后续相关操作均会返回`context deadline exceeded`。
 * Request 和 Writer 字段用于获取当前请求的与输出响应。
 * index 和 handlers 用于 handler 的流程控制；handlers 中存储了当前请求需要执行的所有 handler，index 用于标记当前正在执行的 handler 的索引位。
 * Keys 用于在 handler 之间传递一些额外的信息。
 * Error 用于存储整个请求处理过程中的错误。
 * method 用于检查当前请求的 Method 是否与预定义的相匹配。
-* engine 字段指向当前 blademaster 的 Engine 实例。
+* engine 字段指向当前 gin 的 Engine 实例。
 
 以下为 Context 中所有的公开的方法：
 ```go
@@ -74,7 +74,7 @@ func (c *Context) Protobuf(data proto.Message, err error)
 
 ![handler](/doc/img/bm-handlers.png)
 
-初次接触`blademaster`的用户可能会对其`Handler`的流程处理产生不小的疑惑，实际上`bm`对`Handler`对处理非常简单：
+初次接触`gin`的用户可能会对其`Handler`的流程处理产生不小的疑惑，实际上`bm`对`Handler`对处理非常简单：
 
 * 将`Router`模块中预先注册的`middleware`与其他`Handler`合并，放入`Context`的`handlers`字段，并将`index`字段置`0`
 * 然后通过`Next()`方法一个个执行下去，部分`middleware`可能想要在过程中中断整个流程，此时可以使用`Abort()`方法提前结束处理
@@ -82,9 +82,9 @@ func (c *Context) Protobuf(data proto.Message, err error)
 
 # 扩展阅读
 
-[bm快速开始](blademaster-quickstart.md)  
-[bm中间件](blademaster-mid.md)  
-[bm基于pb生成](blademaster-pb.md)  
+[bm快速开始](gin-quickstart.md)  
+[bm中间件](gin-mid.md)  
+[bm基于pb生成](gin-pb.md)  
 
 -------------
 

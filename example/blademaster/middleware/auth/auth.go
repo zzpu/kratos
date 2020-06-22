@@ -2,7 +2,7 @@ package auth
 
 import (
 	"github.com/zzpu/kratos/pkg/ecode"
-	bm "github.com/zzpu/kratos/pkg/net/http/blademaster"
+	bm "github.com/zzpu/kratos/pkg/net/http/gin"
 	"github.com/zzpu/kratos/pkg/net/metadata"
 )
 

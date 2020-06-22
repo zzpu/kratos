@@ -19,16 +19,16 @@
 * 参考`gin`设计整套HTTP框架，去除`gin`中不需要的部分逻辑
 * 内置一些必要的中间件，便于业务方可以直接上手使用
 
-# blademaster架构
+# gin架构
 
 ![bm-arch](/doc/img/bm-arch-2-2.png)
 
-`blademaster`由几个非常精简的内部模块组成。其中`Router`用于根据请求的路径分发请求，`Context`包含了一个完整的请求信息，`Handler`则负责处理传入的`Context`，`Handlers`为一个列表，一个串一个地执行。  
-所有的`middlerware`均以`Handler`的形式存在，这样可以保证`blademaster`自身足够精简且扩展性足够强。
+`gin`由几个非常精简的内部模块组成。其中`Router`用于根据请求的路径分发请求，`Context`包含了一个完整的请求信息，`Handler`则负责处理传入的`Context`，`Handlers`为一个列表，一个串一个地执行。  
+所有的`middlerware`均以`Handler`的形式存在，这样可以保证`gin`自身足够精简且扩展性足够强。
 
 ![bm-arch](/doc/img/bm-arch-2-3.png)
 
-`blademaster`处理请求的模式非常简单，大部分的逻辑都被封装在了各种`Handler`中。一般而言，业务逻辑作为最后一个`Handler`。
+`gin`处理请求的模式非常简单，大部分的逻辑都被封装在了各种`Handler`中。一般而言，业务逻辑作为最后一个`Handler`。
 
 正常情况下每个`Handler`按照顺序一个一个串行地执行下去，但是`Handler`中也可以中断整个处理流程，直接输出`Response`。这种模式常被用于校验登陆的`middleware`中：一旦发现请求不合法，直接响应拒绝。
 
@@ -36,10 +36,10 @@
 
 # 扩展阅读
 
-[bm快速开始](blademaster-quickstart.md)  
-[bm模块说明](blademaster-mod.md)  
-[bm中间件](blademaster-mid.md)  
-[bm基于pb生成](blademaster-pb.md)  
+[bm快速开始](gin-quickstart.md)  
+[bm模块说明](gin-mod.md)  
+[bm中间件](gin-mid.md)  
+[bm基于pb生成](gin-pb.md)  
 
 -------------
 
