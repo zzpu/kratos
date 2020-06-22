@@ -310,6 +310,11 @@ func (c *Context) mustBindWith(obj interface{}, b binding.Binding) (err error) {
 	return
 }
 
+// File writes the specified file into the body stream in a efficient way.
+func (c *Context) File(filepath string) {
+	http.ServeFile(c.Writer, c.Request, filepath)
+}
+
 func writeStatusCode(w http.ResponseWriter, ecode int) {
 	header := w.Header()
 	header.Set("kratos-status-code", strconv.FormatInt(int64(ecode), 10))
